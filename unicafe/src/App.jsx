@@ -7,6 +7,11 @@ const Title = ({ title }) => {
 }
 
 const Statistics = ({ good, neutral, bad, all, average, positive}) => {
+  if( good === 0 && neutral === 0 && bad === 0){
+    return(
+      <p>No feedback given</p>
+    )
+  }
   return (
     <div>
       <p>Good: {good}</p>
