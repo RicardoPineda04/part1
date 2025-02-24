@@ -1,5 +1,4 @@
 import { useState } from 'react'
-
 const App = () => {
   const anecdotes = [
     'If it hurts, do it more often.',
@@ -27,10 +26,14 @@ const App = () => {
   }
   return (
     <div>
+      <h2>Anecdote of the day</h2>
       <p>{anecdotes[selected]}</p>
       <p>Votos: {votos[selected]}</p>
       <button onClick = { () => handleClick() }>Siguiente anecdota</button>
       <button onClick = { () => handleVoto() }>Vote</button>
+
+      <h2>Anecdote with most votes</h2>
+      <p>{ anecdotes[votos.indexOf(Math.max(...votos))] }</p>
     </div>
   )
 }
